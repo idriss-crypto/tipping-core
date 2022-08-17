@@ -2,9 +2,12 @@ import css from "./tippingStyle.scss";
 import {create} from "fast-creator";
 import {TippingMain} from "./subpages/tippingMain";
 import {TippingAddress} from "./subpages/tippingAddress";
+import {TippingWaitingApproval} from "./subpages/tippingWaitingApproval"
+import {TippingWaitingConfirmation} from "./subpages/tippingWaitingConfirmation"
 import {TippingError} from "./subpages/tippingError";
 import {TippingSuccess} from "./subpages/tippingSuccess";
 import {getProvider} from "./getWeb3Provider";
+import {TippingLogic} from "./tippingLogic"
 
 export class IdrissTippingWidget extends HTMLElement {
     constructor(config) {
@@ -43,6 +46,7 @@ close(){
                     this.network = e.network;
                     this.token = e.token;
                     this.tippingValue = +e.amount;
+                    this.message = e.message;
                     res()
                 })
             });
@@ -65,18 +69,18 @@ close(){
             return;
         }
         this.clearContainer()
-        this.container.append(new TippingWaitingApproval(token).html);
+        this.container.append(new TippingWaitingApproval(this.token).html);
 
-        await TippingLogic.prepareTip(provider, network)
+        await TippingLogic.prepareTip(provider, this.network)
         this.clearContainer()
-        this.container.append((new TippingWaitingConfirmation(identifier, tippingValue, token)).html)
+        this.container.append((new TippingWaitingConfirmation(this.identifier, this.tippingValue, this.token)).html)
         let {
             integer: amountInteger,
             normal: amountNormal
-        } = await TippingLogic.calculateAmount(token, tippingValue)
+        } = await TippingLogic.calculateAmount(this.token, this.tippingValue)
 
         this.container.querySelector('.amountCoin').textContent = amountNormal;
-        let success = await TippingLogic.sendTip(recipient, amountInteger, network, token, params.get('message') ?? "")
+        let success = await TippingLogic.sendTip(this.recipient, this.amountInteger, this.network, this.token, this.message ?? "")
 
         this.clearContainer()
         if (success) {
@@ -87,7 +91,7 @@ close(){
                 explorerLink = `https://bscscan.com/tx/${success.transactionHash}`
             else if (this.network == 'Polygon')
                 explorerLink = `https://polygonscan.com/tx/${success.transactionHash}`
-            this.container.append((new TippingSuccess(identifier, explorerLink)).html)
+            this.container.append((new TippingSuccess(this.identifier, explorerLink)).html)
         } else {
             this.container.append((new TippingError()).html)
             console.log({success})
