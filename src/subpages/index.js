@@ -4,3 +4,4 @@ export {TippingMain} from "./tippingMain";
 export {TippingSuccess} from "./tippingSuccess";
 export {TippingWaitingApproval} from "./tippingWaitingApproval";
 export {TippingWaitingConfirmation} from "./tippingWaitingConfirmation";
+export {FrameworkDapp} from "./frameworkDapp";

@@ -1,6 +1,7 @@
 import css from "./tippingStyle.scss";
 import {create} from "fast-creator";
 import {TippingMain} from "./subpages/tippingMain";
+import {FrameworkDapp} from "./subpages/frameworkDapp";
 import {TippingAddress} from "./subpages/tippingAddress";
 import {TippingWaitingApproval} from "./subpages/tippingWaitingApproval"
 import {TippingWaitingConfirmation} from "./subpages/tippingWaitingConfirmation"
