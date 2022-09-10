@@ -25,6 +25,7 @@ export class FrameworkDapp {
         }
         this.html = create('div', {}, template({
             customHeader: data.customHeader,
+            customText: data.customText ?? "",
             buttonValue: data.buttonValue,
             networks,
             tokens: this.filterTokens(data.tokenFilter),
@@ -93,15 +94,21 @@ export class FrameworkDapp {
         const toggleValueSelection = this.html.querySelector('.valueSelection');
         if (!data.showValueSelection)
             toggleValueSelection.style.display = 'none';
+            this.html.querySelector('.valueSelection .isSelected').dataset.value = ""
         const toggleNetworkSelection = this.html.querySelector('.networkSelection');
         if (!data.showNetworkSelection)
             toggleNetworkSelection.style.display = 'none';
+            this.html.querySelector('.networkSelect').dataset.network = "";
         const toggleTokenSelection = this.html.querySelector('.tokenSelection');
         if (!data.showTokenSelection)
             toggleTokenSelection.style.display = 'none';
+            this.html.querySelector('.tokenSelect').dataset.symbol = "";
         const toggleInput = this.html.querySelector('.toggleInput');
         if (!data.showInput)
             toggleInput.style.display = 'none';
+        const toggleText = this.html.querySelector('.toggleText');
+        if (!data.customText)
+            toggleText.style.display = 'none';
         this.refreshVisibleCoins();
     }
 
@@ -111,7 +118,7 @@ export class FrameworkDapp {
         for (let token of tokens) {
             token.style.display = token.dataset.network == network ? '' : 'none';
         }
-        if (this.html.querySelector('.tokenSelect').dataset.network != network) {
+        if (network && this.html.querySelector('.tokenSelect').dataset.network != network) {
             this.html.querySelector(`.tokenSelect li[data-network="${network}"]`).click();
         }
     }
