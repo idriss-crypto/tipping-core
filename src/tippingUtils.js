@@ -13,7 +13,7 @@ export const tokens = [
         "name": "MATIC",
         "symbol": "MATIC",
         "decimals": 18,
-        "logoURI": "https://polygonscan.com/token/images/matic_32.png"
+        "logoURI": "https://assets.coingecko.com/coins/images/4713/small/matic-token-icon.png?1624446912"
     },
     {
         "chainId": 56,
@@ -57,7 +57,7 @@ export const tokens = [
         "symbol": "WETH",
         "decimals": 18,
         "address": "0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619",
-        "logoURI": "https://polygonscan.com/token/images/wETH_32.png"
+        "logoURI": "https://s2.coinmarketcap.com/static/img/coins/32x32/2396.png"
     },
     {
         "chainId": 56,
@@ -66,7 +66,7 @@ export const tokens = [
         "symbol": "WETH",
         "decimals": 18,
         "address": "0x2170Ed0880ac9A755fd29B2688956BD959F933F8",
-        "logoURI": "https://polygonscan.com/token/images/wETH_32.png"
+        "logoURI": "https://s2.coinmarketcap.com/static/img/coins/32x32/2396.png"
     },
     {
         "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
