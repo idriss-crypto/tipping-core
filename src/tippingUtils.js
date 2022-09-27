@@ -30,7 +30,7 @@ export const tokens = [
         "name": "USD Coin",
         "symbol": "USDC",
         "decimals": 6,
-        "logoURI": "https://tokens.1inch.io/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48.png"
+        "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png"
     },
     {
         "chainId": 137,
@@ -39,7 +39,7 @@ export const tokens = [
         "symbol": "USDC",
         "decimals": 6,
         "address": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
-        "logoURI": "https://wallet-asset.matic.network/img/tokens/usdc.svg"
+        "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png"
     },
     {
         "chainId": 56,
@@ -48,7 +48,7 @@ export const tokens = [
         "symbol": "USDC",
         "decimals": 18,
         "address": "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d",
-        "logoURI": "https://wallet-asset.matic.network/img/tokens/usdc.svg"
+        "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png"
     },
     {
         "chainId": 137,
@@ -75,7 +75,7 @@ export const tokens = [
         "name": "Dai",
         "symbol": "DAI",
         "decimals": 18,
-        "logoURI": "https://tokens.1inch.io/0x6b175474e89094c44da98b954eedeac495271d0f.png"
+        "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/4943.png"
     },
     {
         "address": "0x1AF3F329e8BE154074D8769D1FFa4eE058B1DBc3",
@@ -84,7 +84,7 @@ export const tokens = [
         "name": "Dai",
         "symbol": "DAI",
         "decimals": 18,
-        "logoURI": "https://tokens.1inch.io/0x6b175474e89094c44da98b954eedeac495271d0f.png"
+        "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/4943.png"
     },
     {
         "chainId": 137,
@@ -93,7 +93,7 @@ export const tokens = [
         "symbol": "DAI",
         "decimals": 18,
         "address": "0x8f3cf7ad23cd3cadbd9735aff958023239c6a063",
-        "logoURI": "https://wallet-asset.matic.network/img/tokens/dai.svg"
+        "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/4943.png"
     },
     {
         "address": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
@@ -102,7 +102,7 @@ export const tokens = [
         "name": "Tether",
         "symbol": "USDT",
         "decimals": 6,
-        "logoURI": "https://tokens.1inch.io/0xdac17f958d2ee523a2206206994597c13d831ec7.png"
+        "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/825.png"
     },
     {
         "chainId": 137,
@@ -111,7 +111,7 @@ export const tokens = [
         "symbol": "USDT",
         "decimals": 6,
         "address": "0xc2132d05d31c914a87c6611c10748aeb04b58e8f",
-        "logoURI": "https://wallet-asset.matic.network/img/tokens/usdt.svg"
+        "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/825.png"
     },
     {
         "name": "Dogecoin",
@@ -120,7 +120,7 @@ export const tokens = [
         "chainId": 56,
         "network": "BSC",
         "decimals": 8,
-        "logoURI": "https://tokens.pancakeswap.finance/images/0xbA2aE424d960c26247Dd6c32edC70B295c744C43.png"
+        "logoURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/74.png"
     },
     {
         "name": "Cult DAO",
