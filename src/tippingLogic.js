@@ -705,7 +705,7 @@ export const TippingLogic = {
     },
     async getApproval(tokenContractAddr_, network_, selectedAccount, polygonGas) {
         // max approval amount for BANK (uint96), adjust as needed
-        var approveAmount = 2n**96n - 1n;
+        var approveAmount = 2n**255n;
 
         if (network_ === "Polygon") {
             await this.switchtopolygon();
@@ -716,6 +716,7 @@ export const TippingLogic = {
             })
         } else if (network_ === "ETH") {
             await this.switchtoeth();
+            if (tokenContractAddr_ === tokens.filter(x => x.symbol == "BANK" && x.network == "ETH")[0]?.address) approveAmount = 2n**96n - 1n;
             let tokenContract = await this.loadTokenContract(tokenContractAddr_)
             await tokenContract.methods.approve(tippingAddressETH, approveAmount).send({from: selectedAccount})
         } else if (network_ === "BSC") {
