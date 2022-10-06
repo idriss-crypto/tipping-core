@@ -704,8 +704,8 @@ export const TippingLogic = {
         return await new this.web3.eth.Contract(abiERC20, tokenContractAddr_);
     },
     async getApproval(tokenContractAddr_, network_, selectedAccount, polygonGas) {
-        // max approval amount, adjust as needed
-        var approveAmount = 2n ** 255n;
+        // max approval amount for BANK (uint96), adjust as needed
+        var approveAmount = 2n**96n - 1n;
 
         if (network_ === "Polygon") {
             await this.switchtopolygon();
